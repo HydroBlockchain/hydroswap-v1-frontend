@@ -35,6 +35,7 @@ import { Dots, Wrapper } from '../Pool/styleds'
 import { ConfirmAddModalBottom } from './ConfirmAddModalBottom'
 import { PoolPriceBar } from './PoolPriceBar'
 import { ROUTER_ADDRESS } from '../../constants'
+import DoubleCurrencyLogoConfirmAddModalBottom from './DoubleCurrencyLogoConfirmAddModalBottom'
 
 export default function AddLiquidity({
   match: {
@@ -115,7 +116,7 @@ export default function AddLiquidity({
 
   const addTransaction = useTransactionAdder()
 
-  async function onAdd() {
+  const onAdd = async () => {
     if (!chainId || !library || !account) return
     const router = getRouterContract(chainId, library, account)
 
@@ -200,7 +201,7 @@ export default function AddLiquidity({
             <UIKitText fontSize="48px" mr="8px">
               {`${currencies[Field.CURRENCY_A]?.symbol}/${currencies[Field.CURRENCY_B]?.symbol}`}
             </UIKitText>
-            <DoubleCurrencyLogo
+            <DoubleCurrencyLogoConfirmAddModalBottom
               currency0={currencies[Field.CURRENCY_A]}
               currency1={currencies[Field.CURRENCY_B]}
               size={30}
