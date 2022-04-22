@@ -1,4 +1,4 @@
-import { Text } from 'hydroswap-uikit'
+import { Text } from 'briws-uikit'
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`

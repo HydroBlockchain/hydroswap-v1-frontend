@@ -1,11 +1,7 @@
-import { MenuEntry, menuStatus } from 'hydroswap-uikit'
+import { MenuEntry, menuStatus } from 'briws-uikit'
 
 const config: MenuEntry[] = [
-  {
-    label: 'Home',
-    icon: 'HomeIcon',
-    href: 'https://projecthydro.org/',
-  },
+
   {
     label: 'Trade',
     icon: 'TradeIcon',

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, ButtonProps, useWalletModal} from 'hydroswap-uikit'
+import { Button, ButtonProps, useWalletModal} from 'briws-uikit'
 import useI18n from 'hooks/useI18n'
 import useAuth from 'hooks/useAuth'
 

@@ -18,9 +18,8 @@ export default function Logo({ srcs, alt, ...rest }: LogoProps) {
 
   const src: string | undefined = srcs.find((s) => !BAD_SRCS[s])
 
-  if (src) {
-    return (
-      <img
+    /*
+    <img
         {...rest}
         alt={alt}
         src={src}
@@ -29,8 +28,17 @@ export default function Logo({ srcs, alt, ...rest }: LogoProps) {
           refresh((i) => i + 1)
         }}
       />
+    * */
+
+  if (src) {
+    return (
+      <div>
+          blank img
+      </div>
     )
   }
+
+
 
   return <HelpCircle {...rest} />
 }
