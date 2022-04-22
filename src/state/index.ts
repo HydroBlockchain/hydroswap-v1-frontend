@@ -40,6 +40,7 @@ const store = configureStore({
     toasts
   },
   middleware: [...getDefaultMiddleware({ thunk: false }), save({ states: PERSISTED_KEYS })],
+  // @ts-ignore
   preloadedState: loadedState,
 })
 

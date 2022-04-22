@@ -23,7 +23,8 @@ export default function TransactionPopup({
 }) {
   const { chainId } = useActiveWeb3React()
 
-  const theme = useContext(ThemeContext)
+    // @ts-ignore
+    const theme = useContext(ThemeContext)
 
   return (
     <RowNoFlex>

@@ -102,6 +102,7 @@ const Swap = () => {
   }, [])
 
   const { account } = useActiveWeb3React()
+  // @ts-ignore
   const theme = useContext(ThemeContext)
 
   const [isExpertMode] = useExpertModeManager()

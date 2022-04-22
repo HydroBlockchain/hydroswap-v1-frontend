@@ -19,7 +19,9 @@ const Menu: React.FC = (props) => {
   const cakePriceUsd = priceData ? Number(priceData.prices.Cake) : undefined
   const profile = useGetLocalProfile()
 
+
   return (
+    /* @ts-ignore */
     <UikitMenu
       links={links}
       account={account as string}
@@ -39,3 +41,5 @@ const Menu: React.FC = (props) => {
 }
 
 export default Menu
+
+// todo: fix @ts-ignore

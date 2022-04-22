@@ -32,6 +32,7 @@ const useAuth = () => {
         ) {
           if (connector instanceof WalletConnectConnector) {
             const walletConnector = connector as WalletConnectConnector
+            // @ts-ignore
             walletConnector.walletConnectProvider = null
           }
           toastError('Authorization Error', 'Please authorize to access your account')
