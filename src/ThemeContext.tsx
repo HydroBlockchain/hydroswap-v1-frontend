@@ -11,7 +11,7 @@ export interface ThemeContextType {
 
 const ThemeContext = React.createContext<ThemeContextType>({ isDark: false, toggleTheme: () => null })
 
-const ThemeContextProvider: React.FC = ({ children }) => {
+const ThemeContextProvider: React.FC<PropsType> = ({ children }) => {
   const [isDark, setIsDark] = useState(() => {
     const isDarkUserSetting = localStorage.getItem(CACHE_KEY)
     return isDarkUserSetting ? JSON.parse(isDarkUserSetting) : false
@@ -30,6 +30,10 @@ const ThemeContextProvider: React.FC = ({ children }) => {
       <SCThemeProvider theme={isDark ? dark : light}>{children}</SCThemeProvider>
     </ThemeContext.Provider>
   )
+}
+
+type PropsType = {
+  children: any // todo: maybe fix any
 }
 
 export { ThemeContext, ThemeContextProvider }

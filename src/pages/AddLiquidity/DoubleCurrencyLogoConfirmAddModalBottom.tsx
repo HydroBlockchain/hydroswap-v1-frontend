@@ -7,6 +7,7 @@ export default function DoubleCurrencyLogoConfirmAddModalBottom({
                                                size,
                                            }: DoubleCurrencyLogoProps) {
     return (
+        // @ts-ignore
         <div>
             {currency0}
             {currency1}

@@ -9,7 +9,7 @@ import { ThemeContextProvider } from './ThemeContext'
 
 const Web3ProviderNetwork = createWeb3ReactRoot(NetworkContextName)
 
-const Providers: React.FC = ({ children }) => {
+const Providers: React.FC<PropsType> = ({ children }) => {
   return (
     <Web3ReactProvider getLibrary={getLibrary}>
       <Web3ProviderNetwork getLibrary={getLibrary}>
@@ -21,6 +21,10 @@ const Providers: React.FC = ({ children }) => {
       </Web3ProviderNetwork>
     </Web3ReactProvider>
   )
+}
+
+type PropsType = {
+    children: any // todo: maybe fix any
 }
 
 export default Providers

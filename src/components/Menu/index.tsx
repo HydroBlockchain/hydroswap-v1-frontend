@@ -9,7 +9,7 @@ import useGetLocalProfile from 'hooks/useGetLocalProfile'
 import useAuth from 'hooks/useAuth'
 import links from './config'
 
-const Menu: React.FC = (props) => {
+const Menu: React.FC<PropsType> = (props) => {
   console.log('links',links)
   const { account } = useWeb3React()
   const { login, logout } = useAuth()
@@ -38,6 +38,10 @@ const Menu: React.FC = (props) => {
     />
 
   )
+}
+
+type PropsType = {
+  children: any // todo: maybe fix any
 }
 
 export default Menu

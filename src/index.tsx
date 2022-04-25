@@ -1,6 +1,6 @@
-import React, { StrictMode } from 'react'
-import ReactDOM from 'react-dom'
-import { ResetCSS } from 'briws-uikit'
+import React, {StrictMode} from 'react'
+import ReactDOM from 'react-dom/client';
+import {ResetCSS} from 'briws-uikit'
 import GlobalStyle from './style/Global'
 import App from './pages/App'
 import ApplicationUpdater from './state/application/updater'
@@ -20,8 +20,11 @@ window.addEventListener('error', () => {
    localStorage?.removeItem('redux_localstorage_simple_lists')
 })
 
-ReactDOM.render(
-  <StrictMode>
+const root = ReactDOM.createRoot(
+    document.getElementById('root') as HTMLElement
+);
+
+root.render(
     <Providers>
       <>
         <ListsUpdater />
@@ -34,6 +37,5 @@ ReactDOM.render(
       <GlobalStyle />
       <App />
     </Providers>
-  </StrictMode>,
-  document.getElementById('root')
+
 )
