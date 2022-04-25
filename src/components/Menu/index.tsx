@@ -21,7 +21,6 @@ const Menu: React.FC<PropsType> = (props) => {
 
 
   return (
-    /* @ts-ignore */
     <UikitMenu
       links={links}
       account={account as string}
