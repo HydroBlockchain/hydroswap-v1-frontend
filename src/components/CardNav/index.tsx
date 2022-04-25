@@ -11,7 +11,6 @@ const StyledNav = styled.div`
 // todo: fix ts-ignore
 function Nav({ activeIndex = 0 }: { activeIndex?: number }) {
   const TranslateString = useI18n()
-  // @ts-ignore
   return (
     <StyledNav>
       <ButtonMenu activeIndex={activeIndex} scale="sm" variant="subtle">

@@ -41,7 +41,6 @@ export default function SwapModalHeader({
   const { priceImpactWithoutFee } = useMemo(() => computeTradePriceBreakdown(trade), [trade])
   const priceImpactSeverity = warningSeverity(priceImpactWithoutFee)
 
-  // @ts-ignore
   const theme = useContext(ThemeContext)
 
   return (

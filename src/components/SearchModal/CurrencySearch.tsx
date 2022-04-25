@@ -46,7 +46,6 @@ export function CurrencySearch({
 }: CurrencySearchProps) {
   const { t } = useTranslation()
   const { chainId } = useActiveWeb3React()
-  // @ts-ignore
   const theme = useContext(ThemeContext)
 
   const fixedList = useRef<FixedSizeList>()

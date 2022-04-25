@@ -8,7 +8,6 @@ import { Wrapper, Section, BottomSection, ContentHeader } from './helpers'
 type TransactionErrorContentProps = { message: string; onDismiss: () => void }
 
 const TransactionErrorContent = ({ message, onDismiss }: TransactionErrorContentProps) => {
-  // @ts-ignore
     const theme = useContext(ThemeContext)
   return (
     <Wrapper>

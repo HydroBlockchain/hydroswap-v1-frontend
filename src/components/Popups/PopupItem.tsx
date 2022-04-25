@@ -65,7 +65,6 @@ export default function PopupItem({
     }
   }, [removeAfterMs, removeThisPopup])
 
-  // @ts-ignore
   const theme = useContext(ThemeContext)
 
   let popupContent

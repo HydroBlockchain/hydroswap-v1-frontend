@@ -23,7 +23,6 @@ export default function TransactionPopup({
 }) {
   const { chainId } = useActiveWeb3React()
 
-    // @ts-ignore
     const theme = useContext(ThemeContext)
 
   return (
