@@ -16,8 +16,8 @@
     "@types/multicodec": "^1.0.0",
     "@types/node": "^14.14.16",
     "@types/qs": "^6.9.5",
-    "@types/react": "^18.0.5",
-    "@types/react-dom": "^18.0.1",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "@types/react-redux": "^7.1.14",
     "@types/react-router-dom": "^5.1.6",
     "@types/react-virtualized-auto-sizer": "^1.0.0",
@@ -48,7 +48,7 @@
     "multicodec": "^2.0.0",
     "multihashes": "^3.0.1",
     "polished": "^3.3.2",
-    "react": "17.0.1",
+    "react": "18.0.0",
     "react-device-detect": "^1.6.2",
     "react-dom": "^18.0.0",
     "react-feather": "^2.0.8",
@@ -82,7 +82,12 @@
     "start-server-and-test": "^1.11.0"
   },
   "resolutions": {
-    "@walletconnect/web3-provider": "1.1.1-alpha.0"
+    "@walletconnect/web3-provider": "1.1.1-alpha.0",
+    "react": "18.0.0",
+    "react-dom": "^18.0.0",
+    "@types/react": "18.0.0",
+    "styled-components": "^5",
+    "@types/react-dom": "18.0.0"
   },
   "scripts": {
     "prepare": "grep -rl 0xBCfCcbde45cE874adCB698cC183deBcF17952812 node_modules/@pancakeswap-libs/sdk/dist/ | xargs sed -i 's/0xBCfCcbde45cE874adCB698cC183deBcF17952812/0xF58cC77C7Fb1372d1E078b7335cAFa1E5ec9c029/g && grep -rl 0xd0d4c4cd0848c93cb4fd1f498d7013ee6bfb25783ea21593d5834f5d250ece66 node_modules/@pancakeswap-libs/sdk/dist/ | xargs sed -i 's/0xd0d4c4cd0848c93cb4fd1f498d7013ee6bfb25783ea21593d5834f5d250ece66/0x6e3afb08919ae00604c5c93a22463eb3bd8a68f0255b31976d682f16603143c3/g'",
