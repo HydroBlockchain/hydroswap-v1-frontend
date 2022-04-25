@@ -1,5 +1,6 @@
-import React, {StrictMode} from 'react'
-import ReactDOM from 'react-dom/client';
+import React from 'react'
+import {BrowserRouter} from 'react-router-dom'
+import ReactDOM from 'react-dom/client'
 import {ResetCSS} from 'briws-uikit'
 import GlobalStyle from './style/Global'
 import App from './pages/App'
@@ -13,29 +14,30 @@ import 'inter-ui'
 import './i18n'
 
 if ('ethereum' in window) {
-  (window.ethereum as any).autoRefreshOnNetworkChange = false
+    (window.ethereum as any).autoRefreshOnNetworkChange = false
 }
 
 window.addEventListener('error', () => {
-   localStorage?.removeItem('redux_localstorage_simple_lists')
+    localStorage?.removeItem('redux_localstorage_simple_lists')
 })
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
-);
+)
 
 root.render(
-    <Providers>
-      <>
-        <ListsUpdater />
-        <ApplicationUpdater />
-        <TransactionUpdater />
-        <MulticallUpdater />
-        <ToastListener />
-      </>
-      <ResetCSS />
-      <GlobalStyle />
-      <App />
-    </Providers>
-
+    <BrowserRouter>
+        <Providers>
+            <>
+                <ListsUpdater/>
+                <ApplicationUpdater/>
+                <TransactionUpdater/>
+                <MulticallUpdater/>
+                <ToastListener/>
+            </>
+            <ResetCSS/>
+            <GlobalStyle/>
+            <App/>
+        </Providers>
+    </BrowserRouter>
 )

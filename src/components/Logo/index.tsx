@@ -18,22 +18,18 @@ export default function Logo({ srcs, alt, ...rest }: LogoProps) {
 
   const src: string | undefined = srcs.find((s) => !BAD_SRCS[s])
 
-    /*
-    <img
-        {...rest}
-        alt={alt}
-        src={src}
-        onError={() => {
-          if (src) BAD_SRCS[src] = true
-          refresh((i) => i + 1)
-        }}
-      />
-    * */
-
   if (src) {
     return (
       <div>
-          blank img
+        <img
+            {...rest}
+            alt={alt}
+            src={src}
+            onError={() => {
+              if (src) BAD_SRCS[src] = true
+              refresh((i) => i + 1)
+            }}
+        />
       </div>
     )
   }
