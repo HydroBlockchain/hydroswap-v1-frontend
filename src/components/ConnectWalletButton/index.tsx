@@ -10,7 +10,7 @@ const UnlockButton: React.FC<ButtonProps> = (props) => {
 
   return (
     <Button onClick={onPresentConnectModal} {...props}>
-      {TranslateString(292, 'Unlock Wallet')}
+      {TranslateString(292, 'CONNECT WALLET')}
     </Button>
   )
 }
