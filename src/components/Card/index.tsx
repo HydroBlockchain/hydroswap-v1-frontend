@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {backgroundColor} from '../../common/styles/variables'
 
 const Card = styled.div<any>`
   width: 100%;
@@ -11,8 +12,8 @@ const Card = styled.div<any>`
 export default Card
 
 export const LightCard = styled(Card)`
-  border: 1px solid ${({ theme }) => theme.colors.invertedContrast};
-  background-color: ${({ theme }) => theme.colors.invertedContrast};
+  border: none;
+  background-color: ${backgroundColor};
 `
 
 export const GreyCard = styled(Card)`
