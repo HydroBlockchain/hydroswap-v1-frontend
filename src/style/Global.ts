@@ -1,12 +1,9 @@
+import { backgroundColor } from 'common/styles/variables'
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background-color: ${({ theme }) => {
-      // @ts-ignore
-      return theme.colors.background
-    }};
-    background: #212124;
+    background: ${backgroundColor}; /*this is App background color*/
     img {
       height: auto;
       max-width: 100%;
