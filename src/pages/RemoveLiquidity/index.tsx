@@ -114,7 +114,7 @@ export default function RemoveLiquidity({
     // try to gather a signature for permission
     const nonce = await pairContract.nonces(account)
 
-    const deadlineForSignature: number = Math.ceil(Date.now() / 1000) + deadline
+    const deadlineForSignature: number = Math.ceil(Date.now() / 1000) + deadline.toNumber()
 
     const EIP712Domain = [
       { name: 'name', type: 'string' },
@@ -205,7 +205,7 @@ export default function RemoveLiquidity({
 
     const currencyBIsETH = currencyB === ETHER
     const oneCurrencyIsETH = currencyA === ETHER || currencyBIsETH
-    const deadlineFromNow = Math.ceil(Date.now() / 1000) + deadline
+    const deadlineFromNow = Math.ceil(Date.now() / 1000) + deadline.toNumber()
 
     if (!tokenA || !tokenB) throw new Error('could not wrap')
 

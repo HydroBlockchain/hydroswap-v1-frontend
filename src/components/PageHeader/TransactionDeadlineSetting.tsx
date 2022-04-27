@@ -35,7 +35,7 @@ type TransactionDeadlineSettingModalProps = {
 const TransactionDeadlineSetting = ({ translateString }: TransactionDeadlineSettingModalProps) => {
   const TranslateString = translateString
   const [deadline, setDeadline] = useUserDeadline()
-  const [value, setValue] = useState(deadline / 60) // deadline in minutes
+  const [value, setValue] = useState(deadline.toNumber() / 60) // deadline in minutes
   const [error, setError] = useState<string | null>(null)
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {

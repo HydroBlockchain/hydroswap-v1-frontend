@@ -2,8 +2,8 @@ import { ChainId, Pair, Token } from '@pancakeswap-libs/sdk'
 import flatMap from 'lodash.flatmap'
 import { useCallback, useMemo } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import { BigNumber } from 'ethers'
 import { BASES_TO_TRACK_LIQUIDITY_FOR, PINNED_PAIRS } from '../../constants'
-
 import { useActiveWeb3React } from '../../hooks'
 // eslint-disable-next-line import/no-cycle
 import { useAllTokens } from '../../hooks/Tokens'
@@ -22,6 +22,7 @@ import {
   unmuteAudio,
 } from './actions'
 import { setThemeCache } from '../../utils/theme'
+
 
 function serializeToken(token: Token): SerializedToken {
   return {
@@ -122,7 +123,7 @@ export function useUserSlippageTolerance(): [number, (slippage: number) => void]
   return [userSlippageTolerance, setUserSlippageTolerance]
 }
 
-export function useUserDeadline(): [number, (slippage: number) => void] {
+export function useUserDeadline(): [BigNumber, (slippage: number) => void] {
   const dispatch = useDispatch<AppDispatch>()
   const userDeadline = useSelector<AppState, AppState['user']['userDeadline']>((state) => {
     return state.user.userDeadline
@@ -135,7 +136,7 @@ export function useUserDeadline(): [number, (slippage: number) => void] {
     [dispatch]
   )
 
-  return [userDeadline, setUserDeadline]
+  return [BigNumber.from(userDeadline), setUserDeadline]
 }
 
 export function useAddUserToken(): (token: Token) => void {

@@ -197,7 +197,7 @@ const Swap = () => {
   const { callback: swapCallback, error: swapCallbackError } = useSwapCallback(
     trade,
     allowedSlippage,
-    deadline,
+    deadline.toNumber(),
     recipient
   )
 
