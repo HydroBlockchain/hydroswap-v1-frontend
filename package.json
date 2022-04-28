@@ -34,7 +34,7 @@
     "@web3-react/walletlink-connector": "^6.0.9",
     "ajv": "^6.12.3",
     "babel-loader": "8.1.0",
-    "briws-uikit": "0.1.86",
+    "briws-uikit": "^0.1.86",
     "cids": "^1.0.0",
     "copy-to-clipboard": "^3.2.0",
     "ethers": "^5.0.7",
