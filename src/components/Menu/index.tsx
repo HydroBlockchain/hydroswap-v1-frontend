@@ -44,5 +44,3 @@ type PropsType = {
 }
 
 export default Menu
-
-// todo: fix @ts-ignore
