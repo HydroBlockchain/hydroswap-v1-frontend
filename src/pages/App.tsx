@@ -17,8 +17,6 @@ import { LanguageContext } from '../hooks/LanguageContext'
 import { TranslationsContext } from '../hooks/TranslationsContext'
 
 import Menu from '../components/Menu'
-import useGetDocumentTitlePrice from '../hooks/useGetDocumentTitlePrice'
-import Charts from './Charts'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -52,36 +50,6 @@ position:absolute;
 bottom:0;
 left:0;
 background: #015871;
-`
-
-const wave = keyframes`
- 0% { margin-left: 0px; }
- 100% { margin-left: -1600px; }
-`
-const swell = keyframes`
- 0%, 100% { transform: translate3d(0,-25px,0); }
- 50% { transform: translate3d(0,5px,0); }
-`
-
-const Wave = styled.div`
-background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
-position: absolute;
-top: -198px;
-width: 6400px;
-height: 198px;
-animation: ${wave} 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
-transform: translate3d(0, 0, 0);
-`
-
-const WaveTwo = styled.div`
-background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
-position: absolute;
-width: 6400px;
-height: 198px;
-transform: translate3d(0, 0, 0);
-top: -175px;
-animation: ${wave} 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, ${swell} 7s ease -1.25s infinite;
-opacity: 1;
 `
 
 const Marginer = styled.div`
@@ -158,7 +126,6 @@ export default function App() {
                       <Route exact strict path="/find" component={PoolFinder} />
                       <Route exact strict path="/pool" component={Pool} />
                       <Route exact path="/add" component={AddLiquidity} />
-                      <Route exact path="/charts" component={Charts} />
 
                       <Route exact strict path="/remove/:currencyIdA/:currencyIdB" component={RemoveLiquidity} />
 

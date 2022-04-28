@@ -12,10 +12,6 @@ const config: MenuEntry[] = [
         href: '/swap',
       },
       {
-        label: 'Charts',
-        href: '/charts',
-      },
-      {
         label: 'Liquidity',
         href: '/pool',
       },
