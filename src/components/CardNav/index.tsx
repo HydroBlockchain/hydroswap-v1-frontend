@@ -16,7 +16,7 @@ function Nav({activeIndex = 0}: { activeIndex?: number }) {
         <StyledNav>
             <ButtonMenu activeIndex={activeIndex} scale="sm" variant="subtle">
                 <ButtonMenuItem id="swap-nav-link" to="/swap" as={Link}>{TranslateString(1142, 'Swap')}</ButtonMenuItem>
-                <ButtonMenuItem id="charts-nav-link" to="/charts" as={Link}>{TranslateString(262, 'Charts ')}</ButtonMenuItem>
+                <ButtonMenuItem id="charts-nav-link" to="/charts" as={Link}>{TranslateString(272, 'Charts ')}</ButtonMenuItem>
                 {isAdmin ? <ButtonMenuItem id="pool-nav-link" to="/pool" as={Link}>{TranslateString(262, 'Liquidity')}</ButtonMenuItem> : <></>}
                 <ButtonMenuItem id="pool-nav-link" as="a" href="https://hydro-bridge.org/" target="_blank" rel="noreferrer noopener">Bridge</ButtonMenuItem>
             </ButtonMenu>

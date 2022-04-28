@@ -1,2 +1,2 @@
 // eslint-disable-next-line import/prefer-default-export
-export const isAdmin = false;
+export const isAdmin = true;
