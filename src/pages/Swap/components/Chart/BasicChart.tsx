@@ -57,10 +57,11 @@ const BasicChart = ({
     )
 
   if (isBadData) {
+    // @ts-ignore
     return (
       <NoChartAvailable
         token0Address={token0Address}
-        token1Address={token1Address}
+        token1Address={token1Address} // @ts-ignore
         pairAddress={pairId}
         isMobile={isMobile}
       />
@@ -76,6 +77,7 @@ const BasicChart = ({
         px="24px"
       >
         <Flex flexDirection="column" pt="12px">
+          {/* @ts-ignore */}
           <TokenDisplay
             value={pairPrices?.length > 0 && valueToDisplay}
             inputSymbol={inputCurrency?.symbol}
@@ -91,10 +93,11 @@ const BasicChart = ({
         </Flex>
         <Box>
           <ButtonMenu activeIndex={timeWindow} onItemClick={setTimeWindow} scale="sm">
-            <ButtonMenuItem>{t('24H')}</ButtonMenuItem>
-            <ButtonMenuItem>{t('1W')}</ButtonMenuItem>
-            <ButtonMenuItem>{t('1M')}</ButtonMenuItem>
-            <ButtonMenuItem>{t('1Y')}</ButtonMenuItem>
+            {/* Briws: here and below t deleted */}
+            <ButtonMenuItem>24H</ButtonMenuItem>
+            <ButtonMenuItem>1W</ButtonMenuItem>
+            <ButtonMenuItem>1M</ButtonMenuItem>
+            <ButtonMenuItem>1Y</ButtonMenuItem>
           </ButtonMenu>
         </Box>
       </Flex>

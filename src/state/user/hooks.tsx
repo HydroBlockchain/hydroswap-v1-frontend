@@ -19,9 +19,25 @@ import {
   updateUserExpertMode,
   updateUserSlippageTolerance,
   muteAudio,
-  unmuteAudio,
+  unmuteAudio, ChartViewMode, setChartViewMode,
 } from './actions'
 import { setThemeCache } from '../../utils/theme'
+
+export function useExchangeChartViewManager() {
+  const dispatch = useDispatch<AppDispatch>()
+  const chartViewMode = useSelector<AppState, AppState['user']['userChartViewMode']>(
+      (state) => state.user.userChartViewMode,
+  )
+
+  const setUserChartViewPreference = useCallback(
+      (view: ChartViewMode) => {
+        dispatch(setChartViewMode(view))
+      },
+      [dispatch],
+  )
+
+  return [chartViewMode, setUserChartViewPreference] as const
+}
 
 
 function serializeToken(token: Token): SerializedToken {

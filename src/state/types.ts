@@ -523,7 +523,7 @@ interface LotteryRoundGenerics {
   treasuryFee: string
   firstTicketId: string
   lastTicketId: string
-  finalNumber: number
+  finalNumber: number | null
 }
 
 export interface LotteryRound extends LotteryRoundGenerics {

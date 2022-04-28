@@ -1,5 +1,5 @@
-import { Flex, Text } from 'hydroswap-uikit'
-import { useTranslation } from 'contexts/Localization'
+import { Flex, Text } from 'briws-uikit'
+// import { useTranslation } from 'contexts/Localization' // Briws: not implemented
 import React from 'react'
 import { StyledPriceChart } from './styles'
 
@@ -9,15 +9,17 @@ interface BnbWbnbNoticeProps {
 }
 
 const BnbWbnbNotice: React.FC<BnbWbnbNoticeProps> = ({ isDark, isChartExpanded }) => {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
   return (
     <StyledPriceChart $isDark={isDark} $isExpanded={isChartExpanded} p="24px">
       <Flex justifyContent="center" alignItems="center" height="100%" flexDirection="column">
         <Text mb={['8px', '8px', '0px']} textAlign="center">
-          {t('You can swap WBNB for BNB (and vice versa) with no trading fees.')}
+          {/* Briws: t() deleted */}
+          You can swap WBNB for BNB (and vice versa) with no trading fees.
         </Text>
         <Text mb={['8px', '8px', '0px']} textAlign="center">
-          {t('Exchange rate is always 1 to 1.')}
+          {/* Briws: t() deleted */}
+          Exchange rate is always 1 to 1.
         </Text>
       </Flex>
     </StyledPriceChart>

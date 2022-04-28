@@ -28,3 +28,44 @@ export const removeSerializedPair = createAction<{ chainId: number; tokenAAddres
 )
 export const muteAudio = createAction<void>('user/muteAudio')
 export const unmuteAudio = createAction<void>('user/unmuteAudio')
+
+export enum ChartViewMode {
+  BASIC = 'BASIC',
+  TRADING_VIEW = 'TRADING_VIEW',
+}
+
+export enum FarmStakedOnly {
+  ON_FINISHED = 'onFinished',
+  TRUE = 'true',
+  FALSE = 'false',
+}
+export const toggleTheme = createAction<void>('user/toggleTheme')
+export const updateUserFarmStakedOnly = createAction<{ userFarmStakedOnly: FarmStakedOnly }>(
+    'user/updateUserFarmStakedOnly',
+)
+export const updateUserSingleHopOnly = createAction<{ userSingleHopOnly: boolean }>('user/updateUserSingleHopOnly')
+export const updateGasPrice = createAction<{ gasPrice: string }>('user/updateGasPrice')
+export const addWatchlistToken = createAction<{ address: string }>('user/addWatchlistToken')
+export const addWatchlistPool = createAction<{ address: string }>('user/addWatchlistPool')
+export const updateUserPoolStakedOnly = createAction<{ userPoolStakedOnly: boolean }>('user/updateUserPoolStakedOnly')
+export enum ViewMode {
+  TABLE = 'TABLE',
+  CARD = 'CARD',
+}
+export const updateUserPoolsViewMode = createAction<{ userPoolsViewMode: ViewMode }>('user/updateUserPoolsViewMode')
+export const updateUserFarmsViewMode = createAction<{ userFarmsViewMode: ViewMode }>('user/updateUserFarmsViewMode')
+export const updateUserPredictionChartDisclaimerShow = createAction<{ userShowDisclaimer: boolean }>(
+    'user/updateUserPredictionChartDisclaimerShow',
+)
+export const updateUserPredictionAcceptedRisk = createAction<{ userAcceptedRisk: boolean }>(
+    'user/updateUserPredictionAcceptedRisk',
+)
+export const updateUserUsernameVisibility = createAction<{ userUsernameVisibility: boolean }>(
+    'user/updateUserUsernameVisibility',
+)
+export const updateUserExpertModeAcknowledgementShow = createAction<{ userExpertModeAcknowledgementShow: boolean }>(
+    'user/updateUserExpertModeAcknowledgementShow',
+)
+export const hidePhishingWarningBanner = createAction<void>('user/hidePhishingWarningBanner')
+export const setIsExchangeChartDisplayed = createAction<boolean>('user/toggleIsExchangeChartDisplayed')
+export const setChartViewMode = createAction<ChartViewMode>('user/setChartViewMode')

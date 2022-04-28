@@ -1,17 +1,13 @@
 import {
   Button,
-  ExpandIcon,
   Flex,
   IconButton,
-  ShrinkIcon,
   SyncAltIcon,
   Text,
-  TradingViewIcon,
-  LineGraphIcon,
   useMatchBreakpoints,
-} from 'hydroswap-uikit'
+} from 'briws-uikit' // Briws: ExpandIcon, ShrinkIcon, TradingViewIcon, LineGraphIcon not implemented
 import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
-import { useTranslation } from 'contexts/Localization'
+// import { useTranslation } from 'contexts/Localization'
 import React from 'react'
 import { ChartViewMode } from 'state/user/actions'
 import { useExchangeChartViewManager } from 'state/user/hooks'
@@ -41,7 +37,7 @@ const PriceChart = ({
   const { isDesktop } = useMatchBreakpoints()
   const toggleExpanded = () => setIsChartExpanded((currentIsExpanded) => !currentIsExpanded)
   const [chartView, setChartView] = useExchangeChartViewManager()
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
   return (
     <StyledPriceChart
@@ -67,8 +63,8 @@ const PriceChart = ({
           </IconButton>
           <Flex>
             <ChartButton
-              aria-label={t('Basic')}
-              title={t('Basic')}
+              aria-label='Basic'
+              title='Basic'
               $active={chartView === ChartViewMode.BASIC}
               scale="sm"
               variant="text"
@@ -76,7 +72,7 @@ const PriceChart = ({
               onClick={() => setChartView(ChartViewMode.BASIC)}
               mr="8px"
             >
-              {isDesktop ? t('Basic') : <LineGraphIcon color="primary" />}
+              {isDesktop ? 'Basic' : 'Basic'}
             </ChartButton>
             <ChartButton
               aria-label="TradingView"
@@ -86,14 +82,14 @@ const PriceChart = ({
               variant="text"
               onClick={() => setChartView(ChartViewMode.TRADING_VIEW)}
             >
-              {isDesktop ? 'TradingView' : <TradingViewIcon color="primary" />}
+              {isDesktop ? 'TradingView' : 'TradingView'}
             </ChartButton>
           </Flex>
         </Flex>
         {!isMobile && (
           <Flex>
             <IconButton variant="text" onClick={toggleExpanded}>
-              {isChartExpanded ? <ShrinkIcon color="text" /> : <ExpandIcon color="text" />}
+              {/* {isChartExpanded ? <ShrinkIcon color="text" /> : <ExpandIcon color="text" />} */}
             </IconButton>
           </Flex>
         )}

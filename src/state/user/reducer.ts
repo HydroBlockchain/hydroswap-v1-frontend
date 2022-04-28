@@ -14,7 +14,7 @@ import {
   updateUserSlippageTolerance,
   updateUserDeadline,
   muteAudio,
-  unmuteAudio
+  unmuteAudio, ChartViewMode
 } from './actions'
 
 const currentTimestamp = () => new Date().getTime()
@@ -50,6 +50,7 @@ export interface UserState {
   timestamp: number
 
   audioPlay: boolean
+  userChartViewMode: ChartViewMode
 }
 
 function pairKey(token0Address: string, token1Address: string) {
@@ -65,7 +66,8 @@ export const initialState: UserState = {
   tokens: {},
   pairs: {},
   timestamp: currentTimestamp(),
-  audioPlay: true
+  audioPlay: true,
+  userChartViewMode: ChartViewMode.BASIC,
 }
 
 export default createReducer(initialState, builder =>

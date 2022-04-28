@@ -30,7 +30,7 @@ const NEW_LIST_STATE: ListsState['byUrl'][string] = {
 
 type Mutable<T> = { -readonly [P in keyof T]: T[P] extends ReadonlyArray<infer U> ? U[] : T[P] }
 
-const initialState: ListsState = {
+export const initialState: ListsState = {
   lastInitializedDefaultListOfLists: DEFAULT_LIST_OF_LISTS,
   byUrl: {
     ...DEFAULT_LIST_OF_LISTS.reduce<Mutable<ListsState['byUrl']>>((memo, listUrl) => {
